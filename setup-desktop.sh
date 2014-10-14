@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Upgrade existing repositories
+apt-get dist-upgrade -y
+
 #Add all necessary repositories
 apt-add-repository -y ppa:nilarimogard/webupd8
 add-apt-repository -y ppa:ubuntu-wine/ppa
