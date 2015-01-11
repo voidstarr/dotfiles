@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #Upgrade existing repositories
+apt-get update
 apt-get dist-upgrade -y
 
 #Add all necessary repositories
@@ -11,11 +12,12 @@ add-apt-repository -y ppa:ubuntu-wine/ppa
 apt-get update
 
 #Make a little love
-apt-get install -y gimp hexchat qt-sdk qtcreator virtualbox remmina vlc gimp yakuake pulseaudio-equalizer zsh
-chsh $(which zsh)
+##Install xorg, awesome, and pulse
+apt-get install -y xorg awesome awesome-extra pavucontrol xclip git rxvt-unicode
 
-#Misc items go here
-echo 'Other things needed:\n'
-echo 'Teamspeak 3: http://www.teamspeak.com/\n'
-echo 'Hyperbox: http://hyperbox.altherian.org/\n'
-echo 'To complete setup process reboot this machine.'
+mkdir .config/awesome
+cp /etc/xdg/awesome/rc.lua .config/awesome/rc.lua
+chown -R foss .config
+
+echo 'if [ -z "$DISPLAY" ] && [ $(tty) = /dev/tty1 ]; then \n  startx\nfi' > .bash_profile
+echo 'exec awesome' > .xinitrc
