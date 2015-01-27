@@ -1,0 +1,7 @@
+[user]
+	email = vjvoidstar@gmail.com
+	name = void*
+[push]
+	default = simple
+[core]
+	excludesfile = /home/foss/.gitignore

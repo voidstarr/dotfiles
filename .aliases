@@ -1,0 +1,35 @@
+# terminal
+alias tm="tmux"
+
+# dev stuff
+alias vdu="vagrant destroy -f; vagrant up"
+
+# editor 
+alias vi="vim"
+
+# git stuff
+alias gs="git status"
+alias gpa="git push --all && git push --tags"
+
+# helpful system stuff
+alias df="pydf"
+alias du="ncdu"
+alias free="free -mt"
+alias ps="ps auxf"
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
+
+# wine stuff
+alias wine32="WINEPREFIX='/mnt/sdb/.wine32' WINEARCH='win32' wine"
+alias wine32p="WINEPREFIX='/mnt/sdb/.wine32' WINEARCH='win32'"
+alias wine64="WINEPREFIX='/mnt/sdb/.wine64' wine"
+alias wine64p="WINEPREFIX='/mnt/sdb/.wine64'"
+
+# easy copying
+xclip="xclip -selection c"
+
+#application shortcuts
+alias teamspeak="~/Applications/TeamSpeak3/ts3client_runscript.sh"

@@ -1,0 +1,3 @@
+# Add cool line to make copying to x clipboard possible.
+# This binds C-a b to copy screen's copy buffer to the system clipboard.
+bind b eval writebuf 'exec /bin/sh -c "xsel -i -b < /tmp/screen-exchange"' 'exec /bin/sh -c "killall xsel"'
