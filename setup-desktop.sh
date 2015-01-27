@@ -15,7 +15,7 @@ apt-get update
 ##Install xorg, awesome, and pulse
 apt-get install -y xorg awesome awesome-extra pavucontrol xclip git rxvt-unicode
 
-mkdir .config/awesome
+mkdir -p .config/awesome
 cp /etc/xdg/awesome/rc.lua .config/awesome/rc.lua
 chown -R foss .config
 
