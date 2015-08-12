@@ -13,6 +13,7 @@ git clone git://github.com/voidstarr/dotfiles.git
 this is a WIP for myself to install awesome wm and other things. you probably should *not* use it.
 
 #TODOs
+- [ ] clean up bash files
 - [ ] merge x/Xdefaults into x/Xresources
 - [ ] finish setup.sh
  - [ ] sources.list configuration
