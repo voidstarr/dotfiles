@@ -15,11 +15,11 @@ aptitude dist-upgrade -y
 aptitude remove vi -y
 
 ##Install sudo, vim, screen, xorg, awesome, and pulse
-apt-get install -y vim sudo screen xorg awesome awesome-extra pavucontrol xclip git rxvt-unicode-256color
+apt-get install -y vim sudo screen xorg awesome awesome-extra pavucontrol xclip git rxvt-unicode-256color xfonts-terminus
 
 mkdir -p ${HOME}/.config/awesome
 cp /etc/xdg/awesome/rc.lua ${HOME}/.config/awesome/rc.lua
 chown -R ${USER}:${GROUPS[0]} ${HOME}/.config
 
-printf '%s\n  %s\n%s' 'if [ -z "$DISPLAY" ] && [ $(tty) = /dev/tty1 ]; then' 'startx' 'fi' > .bash_profile
-printf 'exec awesome' > .xinitrc
+#move bash/bash_profile to ~/.bash_profile
+#move x/xinitrc to ~/.xinitrc
