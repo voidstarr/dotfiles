@@ -31,23 +31,16 @@ URxvt*background: Black
 !URxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=18:antialias=true:hinting=true
 !URxvt*boldFont: xft:Bitstream Vera Sans Mono:bold:pixelsize=18:antialias=true:hinting=true
 
-!
-! Xft: Terminus fonts
-!  Fedora/debian packages: terminus-fonts/xfonts-terminus
-URxvt*font: xft:terminus:pixelsize=14:antialias=true:hinting=true
-URxvt*boldFont: xft:terminus:bold:pixelsize=14:antialias=true:hinting=true
+URxvt*font: xft:monospace:pixelsize=14:antialias=true:hinting=true
+URxvt*boldFont: xft:monospace:bold:pixelsize=14:antialias=true:hinting=true
 
-! Traditional fonts - a more traditional font setup in lieu of xft
-!URxvt*font:-*-courier-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
-!URxvt*boldFont:-*-courier-bold-r-normal-*-14-*-*-*-*-*-iso8859-1
+URxvt.keysym.C-minus:     resize-font:smaller
+URxvt.keysym.C-plus:      resize-font:bigger
+URxvt.keysym.C-equal:     resize-font:reset
+URxvt.keysym.C-question:  resize-font:show
+URxvt.resize-font.step: 2
+ 
 
-! Replace blue folder colors with a lighter shade for clarity. To
-!  set colored folders and files within urxvt, xterm, and aterm, add
-!  the following line to your ~/.bashrc ($HOME/.bashrc) file under
-!  the heading "! User specific aliases and functions":
-!   alias ls="ls -h --color=auto"
-!URxvt*color4: RoyalBlue
-!URxvt*color12: RoyalBlue
 
 ! scrollbar - true (default) or false
 URxvt*scrollBar: false
@@ -59,13 +52,14 @@ URxvt*scrollBar_right: false
 URxvt*scrollstyle: rxvt
 
 ! Extensions
-urxvt*perl-lib:        /usr/lib/urxvt/perl/
+urxvt*perl-lib:        /usr/lib/urxvt/perl/,{$HOME}/.urxvt/ext/
 ! dont forget to add font, when you donwload https://github.com/noah/urxvt-font
-urxvt*perl-ext-common: default,matcher,searchable-scrollback
-urxvt*urlLauncher:     /usr/bin/google-chrome
+urxvt*perl-ext-common: default,matcher,searchable-scrollback,resize-font,clipboard
+urxvt*urlLauncher:     /usr/bin/firefox
 urxvt*matcher.button:  1
 URxvt.colorUL: #4682B4
 
-!urxvt.keysym.Control-Shift-Up:  perl:font:increment
-!urxvt.keysym.Control-Shift-Down:  perl:font:decrement
+urxvt.keysym.Shift-Control-V: perl:clipboard:paste
+urxvt.keysym.Shift-Control-C: perl:clipboard:copy
 
+URxvt.iso14755: false
