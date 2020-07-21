@@ -1,0 +1,9 @@
+set nocompatible              " be iMproved, required
+
+filetype on
+" of course we want syntax hilighting
+syntax on
+" Let's map a hotkey for our vim-autoreformat so we can make 'dem script perty
+noremap <F3> :Autoformat<CR><CR>
+
+set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab

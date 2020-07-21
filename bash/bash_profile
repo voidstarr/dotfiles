@@ -1,7 +1,4 @@
-
-# make NVM useful
-export NVM_DIR="/home/foss/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+source .aliases
 
 if [ -z "$DISPLAY" ] && [ $(tty) = /dev/tty1 ]; then
   startx

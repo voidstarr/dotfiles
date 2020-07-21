@@ -1,25 +1,41 @@
 #!/bin/bash
 
-#Remove cdrom from our repositories
-sed -i 's/^deb cdrom/# deb cdrom/g' /etc/apt/sources.list
-
-#TODO: do this much better
-print 'Have you added contrib non-free? If not ^C now!\n'
-read
+# using ubuntu 18.04
+# run from repo directory
 
 #Upgrade existing repositories
-aptitude update
-aptitude dist-upgrade -y
+sudo apt update
+sudo apt dist-upgrade -y
 
-# rid ourselves of this
-aptitude remove vi -y
+##Install my base packages
+sudo apt install -y vim screen tmux xorg awesome awesome-extra slim pavucontrol xclip git rxvt-unicode-256color wpasupplicant wireless-tools
 
-##Install sudo, vim, screen, xorg, awesome, and pulse
-apt-get install -y vim sudo screen xorg awesome awesome-extra pavucontrol xclip git rxvt-unicode-256color xfonts-terminus
+mkdir -p ~/.config/awesome
+ln -s `pwd`/awesome/rc.lua ~/.config/awesome/rc.lua
 
-mkdir -p ${HOME}/.config/awesome
-cp /etc/xdg/awesome/rc.lua ${HOME}/.config/awesome/rc.lua
-chown -R ${USER}:${GROUPS[0]} ${HOME}/.config
+#link bash/bash_profile to ~/.bash_profile
+ln -s `pwd`/bash/bash_profile ~/.bash_profile
 
-#move bash/bash_profile to ~/.bash_profile
-#move x/xinitrc to ~/.xinitrc
+#link x/xinitrc to ~/.xinitrc
+ln -s `pwd`/x/xinitrc ~/.xinitrc
+#link x/Xresources to ~/.Xresources
+ln -s `pwd`/x/Xresources ~/.Xresources
+
+#link tmux/tmux.conf to ~/.tmux.conf
+ln -s `pwd`/tmux/tmux.conf ~/.tmux.conf
+
+#link bash/bash_profile to ~/.bash_profile
+ln -s `pwd`/bash/bash_profile ~/.bash_profile
+#link bash/bash_logout to ~/.bash_logout
+ln -s `pwd`/bash/bash_logout ~/.bash_logout
+#link bash/aliases to ~/.aliases
+ln -s `pwd`/bash/aliases ~/.aliases
+
+#link vim/vimrc to ~/.vimrc
+ln -s `pwd`/vim/vimrc ~/.vimrc
+
+#replace default slim.conf with mine
+sudo cp `pwd`/slim/slim.conf /etc/slim.conf
+
+#set default terminal to urxvt
+update-alternatives --config x-terminal-editor
