@@ -8,7 +8,7 @@ sudo apt update
 sudo apt dist-upgrade -y
 
 ##Install my base packages
-sudo apt install -y vim screen tmux xorg awesome awesome-extra slim pavucontrol xclip git rxvt-unicode-256color wpasupplicant wireless-tools
+sudo apt install -y vim screen tmux xorg awesome awesome-extra slim pavucontrol vlc firefox scrot xclip git rxvt-unicode-256color wpasupplicant wireless-tools fprintd libpam-fprintd
 
 mkdir -p ~/.config/awesome
 ln -s `pwd`/awesome/rc.lua ~/.config/awesome/rc.lua
@@ -39,3 +39,7 @@ sudo cp `pwd`/slim/slim.conf /etc/slim.conf
 
 #set default terminal to urxvt
 update-alternatives --config x-terminal-editor
+
+sudo fprintd-enroll ${USER}
+
+sudo pam-auth-update

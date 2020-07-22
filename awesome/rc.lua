@@ -234,7 +234,9 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
+            awful.widget.watch('bash -c "CAP=`cat /sys/class/power_supply/BAT0/capacity`; echo $CAP\"%\""', 60),
+            wibox.widget.textbox('  |  '),
+          --  mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,

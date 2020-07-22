@@ -1,1 +1,2 @@
 alias battery="cat /sys/class/power_supply/BAT0/capacity"
+alias grabscreen="scrot -s /tmp/screen.png -e 'xclip -sel clip -t image/png -i < /tmp/screen.png'"
